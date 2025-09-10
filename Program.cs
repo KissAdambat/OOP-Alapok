@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,16 +9,27 @@ namespace OOPgyak
 {
     public class Szemely
     {
-        public string Nev ="Peti";
-        public int Kor= 21;
+        private string nev;
+        private int kor;
         
+        public Szemely(string Nev, int Kor)
+        {
+            nev = Nev;
+            kor = Kor;
+        }
+        public string Kiir()
+        {
+            return $"A tanulo neve: {nev} és {kor} éves";
+        }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Szemely tan1 = new Szemely();
-            Console.WriteLine($"A tanulo neve: {tan1.Nev} és {tan1.Kor} éves");
+            Szemely tan1 = new Szemely("Jani",55);
+            Console.WriteLine(tan1.Kiir());
+            Szemely tan2 = new Szemely("Peti",22);
+            Console.WriteLine(tan2.Kiir());
         }
     }
 }
