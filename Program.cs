@@ -6,24 +6,18 @@ using System.Threading.Tasks;
 
 namespace OOPgyak
 {
-    class Szemely
+    public class Szemely
     {
-        public string Nev { get; set; }
-        public int Kor { get; set; }
-        public Szemely(string nev, int kor)
-        {
-            Nev = nev;
-            Kor = kor;
-        }
-        public void Koszones()
-        {
-            Console.WriteLine($"Szia, {Nev} vagyok, {Kor} eves.");
-        }
+        public string Nev ="Peti";
+        public int Kor= 21;
+        
     }
     internal class Program
     {
         static void Main(string[] args)
         {
+            Szemely tan1 = new Szemely();
+            Console.WriteLine($"A tanulo neve: {tan1.Nev} és {tan1.Kor} éves");
         }
     }
 }

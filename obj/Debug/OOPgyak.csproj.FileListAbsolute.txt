@@ -1,0 +1,7 @@
+C:\Users\Kissa\source\repos\OOPgyak\bin\Debug\OOPgyak.exe.config
+C:\Users\Kissa\source\repos\OOPgyak\bin\Debug\OOPgyak.exe
+C:\Users\Kissa\source\repos\OOPgyak\bin\Debug\OOPgyak.pdb
+C:\Users\Kissa\source\repos\OOPgyak\obj\Debug\OOPgyak.csproj.AssemblyReference.cache
+C:\Users\Kissa\source\repos\OOPgyak\obj\Debug\OOPgyak.csproj.CoreCompileInputs.cache
+C:\Users\Kissa\source\repos\OOPgyak\obj\Debug\OOPgyak.exe
+C:\Users\Kissa\source\repos\OOPgyak\obj\Debug\OOPgyak.pdb
