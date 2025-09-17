@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +11,7 @@ namespace OOPgyak
 {
     public class Szemely
     {
-        private string nev;
+        protected string nev;
         private int kor;
         
         public string Nev
@@ -35,14 +37,18 @@ namespace OOPgyak
         public int Npetunkod
         {
             get { return npetunkod; }
-            set {
-                if (value > 6) {
+            set
+            {
+                if (value > 6)
+                {
                     Console.WriteLine("Nem lehet 6-nál nagyobb a neptunkód");
                 }
-                else
-                { 
-                    npetunkod = value; 
-                }
+                else { npetunkod = value; }
+            }
+        }  
+            public void Kiir()
+            {
+                nev = string.Empty;
             }
 
         }
@@ -64,6 +70,7 @@ namespace OOPgyak
                 {
                     Console.WriteLine("Nem lehet negativ az egyenleg");
                 }
+                
             }
         }
         public void betesz()
