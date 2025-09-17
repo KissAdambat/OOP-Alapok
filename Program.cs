@@ -29,7 +29,25 @@ namespace OOPgyak
             return $"A tanuló neve: {nev} és életkora {kor} eves";
         }
     }
+    public class Hallgato : Szemely
+    {
+        private int npetunkod;
+        public int Npetunkod
+        {
+            get { return npetunkod; }
+            set {
+                if (value > 6) {
+                    Console.WriteLine("Nem lehet 6-nál nagyobb a neptunkód");
+                }
+                else
+                { 
+                    npetunkod = value; 
+                }
+            }
 
+        }
+
+    }
 
     public class Bankszamla {         
         private int egyenleg;
