@@ -29,6 +29,34 @@ namespace OOPgyak
             return $"A tanuló neve: {nev} és életkora {kor} eves";
         }
     }
+
+
+    public class Bankszamla {         
+        private int egyenleg;
+        public int Egyenleg
+        {
+            get { return egyenleg; }
+            set
+            {
+                if (value >= 0)
+                {
+                    egyenleg = value;
+                }
+                else
+                {
+                    Console.WriteLine("Nem lehet negativ az egyenleg");
+                }
+            }
+        }
+        public void betesz()
+        {
+            
+        }
+        public void kivesz()
+        {
+
+        }   
+    }
     internal class Program
     {
         static void Main(string[] args)
@@ -37,6 +65,10 @@ namespace OOPgyak
             tan1.Nev = "Jani";
             tan1.Kor = 11;
             Console.WriteLine(tan1);
+
+            Bankszamla szamla1 = new Bankszamla();
+            szamla1.Egyenleg = 1000;
+            Console.WriteLine(szamla1.Egyenleg);
         }
     }
 }
