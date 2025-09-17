@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPgyak;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Globalization;
@@ -33,28 +34,31 @@ namespace OOPgyak
     }
     public class Hallgato : Szemely
     {
-        private int npetunkod;
-        public int Npetunkod
+        private string npetunkod;
+        public string Npetunkod
         {
             get { return npetunkod; }
             set
             {
-                if (value > 6)
+                if (value.Length <= 6)
                 {
-                    Console.WriteLine("Nem lehet 6-nál nagyobb a neptunkód");
+                    npetunkod = value;
                 }
-                else { npetunkod = value; }
+                else { Console.WriteLine("Nem lehet 6-nál nagyobb a neptunkód"); }
             }
         }  
             public void Kiir()
             {
                 nev = string.Empty;
             }
-
         }
+    }
+    
+    public class Dolgozo : Szemely
+    {
+        private int ber;
 
     }
-
     public class Bankszamla {         
         private int egyenleg;
         public int Egyenleg
@@ -82,18 +86,40 @@ namespace OOPgyak
 
         }   
     }
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Szemely tan1 = new Szemely();
-            tan1.Nev = "Jani";
-            tan1.Kor = 11;
-            Console.WriteLine(tan1);
+internal class Program
+{
+      static void Main(string[] args)
+      {
+             Szemely tan1 = new Szemely();
+             tan1.Nev = "Jani";
+             tan1.Kor = 11;
+             Console.WriteLine(tan1);
+             Console.WriteLine("---------------------------------");
+             Bankszamla szamla1 = new Bankszamla();
+             szamla1.Egyenleg = 1000;
+             Console.WriteLine(szamla1.Egyenleg);
+             Console.WriteLine("---------------------------------");
+             Hallgato hallgato1 = new Hallgato();
+             hallgato1.Npetunkod = "123456";
+             Console.WriteLine(hallgato1.Npetunkod);
+             Console.WriteLine("---------------------------------");
+             List<Hallgato> hallgatok = new List<Hallgato>();
 
-            Bankszamla szamla1 = new Bankszamla();
-            szamla1.Egyenleg = 1000;
-            Console.WriteLine(szamla1.Egyenleg);
-        }
-    }
+             for (int i = 0; i < 2; i++)
+             {
+                Hallgato hallgato = new Hallgato();
+                Console.Write($"Kérem a(z) {i+1} hallgató nevét");
+                hallgato.Nev = Console.ReadLine();
+                Console.Write($"Kérem a(z) {i+1} hallgató életkorát");
+                hallgato.Kor = int.Parse(Console.ReadLine());
+                Console.Write($"Kérem a(z) {i+1} hallgató neptunkódját");
+                hallgato.Npetunkod = Console.ReadLine();
+                hallgatok.Add(hallgato);
+             }
+
+             foreach (var item in hallgatok)
+             {
+                    Console.WriteLine($"A hallgatók neve: {item.Nev}");
+             }
+      }
 }
